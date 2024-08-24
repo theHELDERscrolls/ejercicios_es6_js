@@ -8,22 +8,42 @@ const game = {
   year: 2020,
 };
 
+const { title, gender, year } = game;
+console.log(game);
+
 // 1.2 En base al siguiente javascript, usa destructuring para crear 3 variables
 // llamadas fruit1, fruit2 y fruit3, con los valores del array. Posteriormente
 // imprimelo por consola.
 
 const fruits = ["Banana", "Strawberry", "Orange"];
 
+const [fruit1, fruit2, fruit3] = fruits;
+console.log(fruits);
+
 // 1.3 En base al siguiente javascript, usa destructuring para crear 2
-// variables igualandolo a la función e imprimiendolo por consola.
+// variables igualándolo a la función e imprimiéndolo por consola.
 
 const animalFunction = () => {
   return { name: "Bengal Tiger", race: "Tiger" };
 };
 
+const { name, race } = animalFunction();
+
+console.log(name);
+console.log(race);
+
 // 1.4 En base al siguiente javascript, usa destructuring para crear las
 // variables name y itv con sus respectivos valores. Posteriormente crea
 // 3 variables usando igualmente el destructuring para cada uno de los años
-// y comprueba que todo esta bien imprimiendolo.
+// y comprueba que todo esta bien imprimiéndolo.
 
-const car = { name: "Mazda 6", itv: [2015, 2011, 2020] };
+const car = { nombre: "Mazda 6", itv: [2015, 2011, 2020] };
+
+const { nombre, itv } = car;
+console.log(nombre);
+console.log(itv);
+
+const {
+  itv: [date1, date2, date3],
+} = car;
+console.log(itv);
