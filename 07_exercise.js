@@ -1,6 +1,6 @@
 // 7.1 Dado el siguiente javascript filtra los videojuegos por gender = 'RPG' usando
 // .filter() y usa .reduce() para conseguir la media de sus .score.
-// La función .find() también podría ayudarte para el contrar el genero 'RPG' en el
+// La función .find() también podría ayudarte para encontrar el genero 'RPG' en el
 // array .gender.
 
 const videogames = [
@@ -11,3 +11,17 @@ const videogames = [
   { name: "Genshin Impact", genders: ["RPG", "Aventura"], score: 7.5 },
   { name: "Legend of Zelda: Breath of the wild", genders: ["RPG"], score: 10 },
 ];
+
+const videogamesFilter = () => {
+  const rpgs = videogames.filter((videogame) =>
+    videogame.genders.includes("RPG")
+  );
+  if (rpgs.length === 0) {
+    return "There isn't any RPG game";
+  }
+  return (
+    rpgs.reduce((acc, videogame) => acc + videogame.score, 0) / rpgs.length
+  );
+};
+
+console.log(videogamesFilter());
