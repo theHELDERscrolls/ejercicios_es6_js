@@ -39,3 +39,12 @@ const cities = [
   { isVisited: true, name: "Amsterdam" },
   { isVisited: false, name: "Seul" },
 ];
+
+const visitedCities = cities.map((city) => {
+  if (city.isVisited === true) {
+    return city.name + " - Visitado";
+  } else {
+    return city.name + " - Pendiente";
+  }
+});
+console.log(visitedCities);
